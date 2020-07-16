@@ -1,0 +1,27 @@
+{
+  "name": "CoralFrontend",
+  "version": "1.0.0",
+  "description": "coral crm frontend app",
+  "author": "PawelSrzednicki",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt --hostname app.coralcrm.test",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.11.0",
+    "fibers": "^5.0.0",
+    "import": "0.0.6",
+    "nuxt": "^2.13.0",
+    "vue-fragment": "^1.5.1"
+  },
+  "devDependencies": {
+    "@mdi/font": "^5.3.45",
+    "@nuxtjs/vuetify": "^1.0.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2"
+  }
+}

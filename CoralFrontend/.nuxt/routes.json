@@ -1,0 +1,256 @@
+[
+  {
+    "path": "/admin",
+    "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\admin.vue",
+    "chunkName": "pages/admin",
+    "children": [
+      {
+        "name": "admin",
+        "path": "",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\admin\\\\index.vue",
+        "chunkName": "pages/admin/index",
+        "_name": "_0039c878"
+      },
+      {
+        "name": "admin-users",
+        "path": "users",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\admin\\\\users\\\\index.vue",
+        "chunkName": "pages/admin/users/index",
+        "_name": "_6e7e1bd8"
+      },
+      {
+        "name": "admin-settings-picklists",
+        "path": "settings/picklists",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\admin\\\\settings\\\\picklists\\\\index.vue",
+        "chunkName": "pages/admin/settings/picklists/index",
+        "_name": "_02966c6b"
+      },
+      {
+        "name": "admin-users-add",
+        "path": "users/add",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\admin\\\\users\\\\add.vue",
+        "chunkName": "pages/admin/users/add",
+        "_name": "_5b90a4e3"
+      },
+      {
+        "name": "admin-users-edit-id",
+        "path": "users/edit/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\admin\\\\users\\\\edit\\\\_id.vue",
+        "chunkName": "pages/admin/users/edit/_id",
+        "_name": "_e899389c"
+      },
+      {
+        "name": "admin-users-id",
+        "path": "users/:id",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\admin\\\\users\\\\_id.vue",
+        "chunkName": "pages/admin/users/_id",
+        "_name": "_0b672d08"
+      }
+    ],
+    "_name": "_ac89166c"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\login.vue",
+    "chunkName": "pages/login",
+    "_name": "_41f3c3e4"
+  },
+  {
+    "path": "/",
+    "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "children": [
+      {
+        "name": "index",
+        "path": "",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\index.vue",
+        "chunkName": "pages/index/index",
+        "_name": "_31732315"
+      },
+      {
+        "name": "index-calendar",
+        "path": "calendar",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\calendar\\\\index.vue",
+        "chunkName": "pages/index/calendar/index",
+        "_name": "_49579fd7"
+      },
+      {
+        "name": "index-companies",
+        "path": "companies",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\companies\\\\index.vue",
+        "chunkName": "pages/index/companies/index",
+        "_name": "_7e8d74a4"
+      },
+      {
+        "name": "index-contacts",
+        "path": "contacts",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\contacts\\\\index.vue",
+        "chunkName": "pages/index/contacts/index",
+        "_name": "_2b9aaba2"
+      },
+      {
+        "name": "index-leads",
+        "path": "leads",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\leads\\\\index.vue",
+        "chunkName": "pages/index/leads/index",
+        "_name": "_2cf68230"
+      },
+      {
+        "name": "index-tasks",
+        "path": "tasks",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\tasks\\\\index.vue",
+        "chunkName": "pages/index/tasks/index",
+        "_name": "_145940de"
+      },
+      {
+        "name": "index-tickets",
+        "path": "tickets",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\tickets\\\\index.vue",
+        "chunkName": "pages/index/tickets/index",
+        "_name": "_0dc7cd50"
+      },
+      {
+        "name": "index-calendar-add",
+        "path": "calendar/add",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\calendar\\\\add.vue",
+        "chunkName": "pages/index/calendar/add",
+        "_name": "_1e6de766"
+      },
+      {
+        "name": "index-companies-add",
+        "path": "companies/add",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\companies\\\\add.vue",
+        "chunkName": "pages/index/companies/add",
+        "_name": "_a686e91a"
+      },
+      {
+        "name": "index-contacts-add",
+        "path": "contacts/add",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\contacts\\\\add.vue",
+        "chunkName": "pages/index/contacts/add",
+        "_name": "_410769f1"
+      },
+      {
+        "name": "index-leads-add",
+        "path": "leads/add",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\leads\\\\add.vue",
+        "chunkName": "pages/index/leads/add",
+        "_name": "_66c996b7"
+      },
+      {
+        "name": "index-tasks-add",
+        "path": "tasks/add",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\tasks\\\\add.vue",
+        "chunkName": "pages/index/tasks/add",
+        "_name": "_586a4da0"
+      },
+      {
+        "name": "index-tickets-add",
+        "path": "tickets/add",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\tickets\\\\add.vue",
+        "chunkName": "pages/index/tickets/add",
+        "_name": "_a75665b2"
+      },
+      {
+        "name": "index-calendar-edit-id",
+        "path": "calendar/edit/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\calendar\\\\edit\\\\_id.vue",
+        "chunkName": "pages/index/calendar/edit/_id",
+        "_name": "_61e777f5"
+      },
+      {
+        "name": "index-companies-edit-id",
+        "path": "companies/edit/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\companies\\\\edit\\\\_id.vue",
+        "chunkName": "pages/index/companies/edit/_id",
+        "_name": "_a947c37c"
+      },
+      {
+        "name": "index-contacts-edit-id",
+        "path": "contacts/edit/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\contacts\\\\edit\\\\_id.vue",
+        "chunkName": "pages/index/contacts/edit/_id",
+        "_name": "_10d9a640"
+      },
+      {
+        "name": "index-leads-edit-id",
+        "path": "leads/edit/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\leads\\\\edit\\\\_id.vue",
+        "chunkName": "pages/index/leads/edit/_id",
+        "_name": "_4d46b2f4"
+      },
+      {
+        "name": "index-tasks-edit-id",
+        "path": "tasks/edit/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\tasks\\\\edit\\\\_id.vue",
+        "chunkName": "pages/index/tasks/edit/_id",
+        "_name": "_32ae6aa2"
+      },
+      {
+        "name": "index-tickets-edit-id",
+        "path": "tickets/edit/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\tickets\\\\edit\\\\_id.vue",
+        "chunkName": "pages/index/tickets/edit/_id",
+        "_name": "_3fe148f6"
+      },
+      {
+        "name": "index-user-edit-id",
+        "path": "user/edit/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\user\\\\edit\\\\_id.vue",
+        "chunkName": "pages/index/user/edit/_id",
+        "_name": "_5dbc2948"
+      },
+      {
+        "name": "index-calendar-id",
+        "path": "calendar/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\calendar\\\\_id.vue",
+        "chunkName": "pages/index/calendar/_id",
+        "_name": "_85aca802"
+      },
+      {
+        "name": "index-companies-id",
+        "path": "companies/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\companies\\\\_id.vue",
+        "chunkName": "pages/index/companies/_id",
+        "_name": "_4b78500c"
+      },
+      {
+        "name": "index-contacts-id",
+        "path": "contacts/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\contacts\\\\_id.vue",
+        "chunkName": "pages/index/contacts/_id",
+        "_name": "_4079a2ec"
+      },
+      {
+        "name": "index-leads-id",
+        "path": "leads/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\leads\\\\_id.vue",
+        "chunkName": "pages/index/leads/_id",
+        "_name": "_05855b50"
+      },
+      {
+        "name": "index-tasks-id",
+        "path": "tasks/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\tasks\\\\_id.vue",
+        "chunkName": "pages/index/tasks/_id",
+        "_name": "_11b3db8e"
+      },
+      {
+        "name": "index-tickets-id",
+        "path": "tickets/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\tickets\\\\_id.vue",
+        "chunkName": "pages/index/tickets/_id",
+        "_name": "_4b1091c0"
+      },
+      {
+        "name": "index-user-id",
+        "path": "user/:id?",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\user\\\\_id.vue",
+        "chunkName": "pages/index/user/_id",
+        "_name": "_1d669792"
+      }
+    ],
+    "_name": "_784c20cd"
+  }
+]

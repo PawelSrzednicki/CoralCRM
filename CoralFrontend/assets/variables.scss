@@ -1,0 +1,27 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+//$font-size-root: 20px;
+
+//global
+.theme--light.v-application {
+  color: #263238;
+  background-color: #FAFAFA;
+}
+
+// .theme--light.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state) > .v-input__control > .v-input__slot fieldset {
+//   color: rgb(0, 126, 163);
+//   border: 2px solid;
+// }
+
+// .v-text-field--outlined .v-label {
+//   color: rgb(0, 126, 163);
+// }
+
+// .theme--light.v-label:hover {
+//   color: rgba(0, 0, 0, 0.6);
+// }
+
+.required label::after {
+  content: "*";
+}
