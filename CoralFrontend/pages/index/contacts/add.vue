@@ -5,18 +5,18 @@
         </v-card-title>
         <v-card-text>
           <v-container>
-              <contactForm></contactForm>  
+              <Form></Form>  
           </v-container>             
         </v-card-text>
       </v-card>
 </template>
 
 <script>
-import contactForm from '~/components/contacts/contactForm.vue';
+import Form from '~/components/contacts/Form.vue';
 
 export default{
   components:{
-    contactForm
+    Form
   }
 }
 </script>

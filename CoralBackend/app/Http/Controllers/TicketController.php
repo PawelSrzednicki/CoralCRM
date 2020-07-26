@@ -40,7 +40,7 @@ class TicketController extends Controller
     {   
 
          $data = $request;
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
         
         $ticket = $this->ticket->store($data);
 
@@ -55,7 +55,7 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        $this->authorize('view', Ticket::class);
+        $this->authorize('view', App\Models\Ticket::class);
 
         $data = $this->ticket->getById($id);
 
@@ -71,10 +71,10 @@ class TicketController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        $this->authorize('update', Ticket::class);
+        $this->authorize('update', App\Models\Ticket::class);
 
          $data = $request;
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
 
         $this->ticket->update($id,$data);
 
@@ -89,7 +89,7 @@ class TicketController extends Controller
      */
     public function destroy($id)
     {   
-        $this->authorize('delete', Ticket::class);
+        $this->authorize('delete', App\Models\Ticket::class);
 
         $this->ticket->delete($id);
 

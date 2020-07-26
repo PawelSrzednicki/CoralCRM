@@ -28,7 +28,7 @@ class Contact extends Model
 
     public function lifecyclestage()
    {
-       return $this->belongsToMany('App\Models\PltbllifecycleStage', 'contact_lifecycle_stage', 'contact_id', 'lifecycle_stage_id');
+       return $this->belongsToMany('App\Models\PltbllifecycleStage', 'contact_lifecyclestage', 'contact_id', 'lifecyclestage_id');
    }
 
    public function companies()

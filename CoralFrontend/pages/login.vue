@@ -28,10 +28,13 @@
       <v-card height="100%" tile>
         <v-row align="center" justify="center" class="fill-height">
           <v-col cols="12" sm="6">
-            <v-card-title class="justify-center">
-              <span class="#007EA3">Coral</span>
-              <span class="pl-1 font-weight-light  primary--text">CRM</span>
-            </v-card-title>
+            <v-img
+              src="/images/logo/logo.jpg"
+              class="mx-auto"
+              max-height="90%"
+              max-width="70"
+              contain
+            ></v-img>
             <v-card-text>
               <div v-if="error">
                 <v-alert text type="error">
@@ -48,7 +51,6 @@
                   prepend-inner-icon="mdi-account"
                   type="text"
                   required
-                  filled
                 />
 
                 <v-text-field
@@ -62,7 +64,6 @@
                   prepend-inner-icon="mdi-lock"
                   :type="show1 ? 'text' : 'password'"
                   required
-                  filled
                 />
               </v-form>
             </v-card-text>

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{501:function(n,e,t){"use strict";t.r(e);var l={name:"AdminPages",layout:"admin",middleware:"auth"},c=t(25),component=Object(c.a)(l,(function(){var n=this.$createElement,e=this._self._c||n;return e("div",[e("nuxt-child")],1)}),[],!1,null,null,null);e.default=component.exports}}]);

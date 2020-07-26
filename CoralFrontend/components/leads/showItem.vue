@@ -5,72 +5,40 @@
       <v-toolbar dense flat>
       <v-toolbar-title>Title</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn outlined color="primary" :to="{ name: 'index-contacts-edit-id', params: { id: this.contactId }}">
+      <v-btn outlined color="primary" :to="{ name: 'index-leads-edit-id', params: { id: this.leadId }}">
         Edit
       </v-btn>
        </v-toolbar>
       </v-col>
       <v-col cols="6">
         <v-text-field
-          label="Firstname"
-          class="required"
-          filled
-          v-model="formData.firstname"
+          label="Name"        
+          v-model="formData.name"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
         <v-text-field
-          label="Surname"
-          filled
-          v-model="formData.lastname"
+          label="Amount"       
+          v-model="formData.amount"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
         <v-text-field
-          label="Address"
-          class="required"
-          filled
-          v-model="formData.address"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field
-          label="Phone"
-          class="required"
-          filled
-          v-model="formData.phone"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field
-          label="Email"
-          class="required"
-          filled
-          v-model="formData.email"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field
-          label="City"
-          filled
-          v-model="formData.city"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field
-          label="Zip-Code"
-          filled
-          v-model="formData.zip"
+          label="Lead Close Date"
+          v-model="formData.leadCloseDate"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
         <span
-          v-if="formData.contactstatus && formData.contactstatus.length === 1"
+          v-if="formData.lead_status && formData.lead_status.length === 1"
         >
           <v-text-field
-            label="Contact Status"
-            filled
-            v-model="formData.contactstatus[0].value"
+            label="Lead Status"
+            v-model="formData.lead_status[0].value"
+            readonly
           ></v-text-field>
         </span>
       </v-col>
@@ -78,26 +46,27 @@
       <v-col cols="6">
         <span
           v-if="
-            formData.contactleadstatus &&
-              formData.contactleadstatus.length === 1
+            formData.lead_type &&
+              formData.lead_type.length === 1
           "
         >
           <v-text-field
-            label="Contact Lead Status"
-            filled
-            v-model="formData.contactleadstatus[0].value"
+            label="Lead Type"
+            v-model="formData.lead_type[0].value"
+            readonly
           ></v-text-field>
         </span>
       </v-col>
 
       <v-col cols="6">
         <span
-          v-if="formData.lifecyclestage && formData.lifecyclestage.length === 1"
+          v-if="formData.sales_pipeline && formData.sales_pipeline.length === 1"
         >
           <v-text-field
-            label="Lifecyclestage"
+            label="Sales Pipeline"
             filled
-            v-model="formData.lifecyclestage[0].value"
+            v-model="formData.sales_pipeline[0].value"
+            readonly
           ></v-text-field>
         </span>
       </v-col>
@@ -108,7 +77,7 @@
 <script>
 export default {
   props: {
-    contactId: {
+    leadId: {
       type: Number,
       required: false,
       default: ""
@@ -124,8 +93,8 @@ export default {
   methods: {},
 
   created() {
-    if (this.contactId) {
-      this.$axios.get(`contact/${this.contactId}`).then(res => {
+    if (this.leadId) {
+      this.$axios.get(`lead/${this.leadId}`).then(res => {
         console.log(res.data[0]);
         this.formData = res.data[0];
       });
@@ -133,3 +102,8 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+  .theme--light.v-label {
+       color: #1E88E5;
+   }   
+</style>

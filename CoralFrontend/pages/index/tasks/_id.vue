@@ -2,14 +2,14 @@
       <v-card>
         <v-card-text>
           <v-container>
-              <showItem :contactId="this.$route.params.id"></showItem>  
+              <showItem :taskId="this.$route.params.id"></showItem>  
           </v-container>             
         </v-card-text>
       </v-card>
 </template>
 
 <script>
-import showItem from '~/components/contacts/showItem.vue';
+import showItem from '~/components/tasks/showItem.vue';
 
 export default{
   components:{

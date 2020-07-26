@@ -16,7 +16,7 @@ class CreateLeadsTable extends Migration
 		Schema::create('leads', function(Blueprint $table)
 		{
 			$table->bigIncrements('id');
-			$table->integer('assignedTo')->nullable();
+			$table->integer('owner_id')->nullable();
 			$table->string('name')->unique();
 			$table->string('amount');
 			$table->dateTime('leadCloseDate');

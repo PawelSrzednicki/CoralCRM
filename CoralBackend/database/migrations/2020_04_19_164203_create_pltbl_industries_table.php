@@ -17,7 +17,7 @@ class CreatePltblIndustriesTable extends Migration
 		{
 			$table->bigIncrements('id');
             $table->string('value')->unique();
-            $table->string('description');
+            $table->string('description')->nullable();
 			$table->timestamps();
 		});
 	}

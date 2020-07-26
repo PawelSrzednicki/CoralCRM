@@ -118,6 +118,13 @@
         "_name": "_1e6de766"
       },
       {
+        "name": "index-calendar-list",
+        "path": "calendar/list",
+        "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\calendar\\\\list.vue",
+        "chunkName": "pages/index/calendar/list",
+        "_name": "_4bcd8529"
+      },
+      {
         "name": "index-companies-add",
         "path": "companies/add",
         "component": "E:\\\\Programs\\\\laragon\\\\www\\\\CoralCRM\\\\CoralFrontend\\\\pages\\\\index\\\\companies\\\\add.vue",

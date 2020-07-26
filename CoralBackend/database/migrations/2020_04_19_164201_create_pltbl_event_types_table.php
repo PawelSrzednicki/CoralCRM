@@ -16,8 +16,8 @@ class CreatePltblEventTypesTable extends Migration
 		Schema::create('pltbl_event_types', function(Blueprint $table)
 		{
 			$table->bigIncrements('id', true);
-            $table->string('name');
-            $table->string('description');
+            $table->string('value');
+            $table->string('description')->nullable();
 		});
 	}
 

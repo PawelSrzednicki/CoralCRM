@@ -40,7 +40,7 @@ class TaskController extends Controller
     {   
 
         $data = $request;
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
         
         $task = $this->task->store($data);
 
@@ -55,7 +55,7 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        $this->authorize('view', Task::class);
+        $this->authorize('view', App\Models\Task::class);
 
         $data = $this->task->getById($id);
 
@@ -71,10 +71,10 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        $this->authorize('update', Task::class);
+        $this->authorize('update', App\Models\Task::class);
 
         $data = $request->all();
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
 
         $this->task->update($id,$data);
 
@@ -89,7 +89,7 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {   
-        $this->authorize('delete', Task::class);
+        $this->authorize('delete', App\Models\Task::class);
 
         $this->task->delete($id);
 

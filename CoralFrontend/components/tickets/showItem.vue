@@ -5,72 +5,33 @@
       <v-toolbar dense flat>
       <v-toolbar-title>Title</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn outlined color="primary" :to="{ name: 'index-contacts-edit-id', params: { id: this.contactId }}">
+      <v-btn outlined color="primary" :to="{ name: 'index-tickets-edit-id', params: { id: this.ticketId }}">
         Edit
       </v-btn>
        </v-toolbar>
       </v-col>
       <v-col cols="6">
         <v-text-field
-          label="Firstname"
-          class="required"
-          filled
-          v-model="formData.firstname"
+          label="name"
+          v-model="formData.name"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
         <v-text-field
-          label="Surname"
-          filled
-          v-model="formData.lastname"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field
-          label="Address"
-          class="required"
-          filled
-          v-model="formData.address"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field
-          label="Phone"
-          class="required"
-          filled
-          v-model="formData.phone"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field
-          label="Email"
-          class="required"
-          filled
-          v-model="formData.email"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field
-          label="City"
-          filled
-          v-model="formData.city"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="6">
-        <v-text-field
-          label="Zip-Code"
-          filled
-          v-model="formData.zip"
+          label="Creation Date"
+          v-model="formData.creationDate"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
         <span
-          v-if="formData.contactstatus && formData.contactstatus.length === 1"
+          v-if="formData.ticket_priority && formData.ticket_priority.length === 1"
         >
           <v-text-field
-            label="Contact Status"
-            filled
-            v-model="formData.contactstatus[0].value"
+            label="Ticket Priority"
+            v-model="formData.ticket_priority[0].value"
+            readonly
           ></v-text-field>
         </span>
       </v-col>
@@ -78,28 +39,24 @@
       <v-col cols="6">
         <span
           v-if="
-            formData.contactleadstatus &&
-              formData.contactleadstatus.length === 1
+            formData.ticket_status &&
+              formData.ticket_status.length === 1
           "
         >
           <v-text-field
-            label="Contact Lead Status"
-            filled
-            v-model="formData.contactleadstatus[0].value"
+            label="Ticket Status"
+            v-model="formData.ticket_status[0].value"
+            readonly
           ></v-text-field>
         </span>
       </v-col>
-
-      <v-col cols="6">
-        <span
-          v-if="formData.lifecyclestage && formData.lifecyclestage.length === 1"
-        >
-          <v-text-field
-            label="Lifecyclestage"
-            filled
-            v-model="formData.lifecyclestage[0].value"
-          ></v-text-field>
-        </span>
+      
+      <v-col cols="12">
+        <v-text-field
+          label="Description"
+          v-model="formData.description"
+          readonly
+        ></v-text-field>
       </v-col>
     </v-row>
   </v-form>
@@ -124,8 +81,8 @@ export default {
   methods: {},
 
   created() {
-    if (this.contactId) {
-      this.$axios.get(`contact/${this.contactId}`).then(res => {
+    if (this.ticketId) {
+      this.$axios.get(`ticket/${this.ticketId}`).then(res => {
         console.log(res.data[0]);
         this.formData = res.data[0];
       });
@@ -133,3 +90,8 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+  .theme--light.v-label {
+       color: #1E88E5;
+   }   
+</style>

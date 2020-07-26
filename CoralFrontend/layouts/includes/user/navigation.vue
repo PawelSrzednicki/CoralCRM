@@ -7,10 +7,13 @@
         color="white"
       ></v-app-bar-nav-icon>
       <v-toolbar-title class="mr-12 align-center">
-        <span class="white--text text--darken-3">Coral</span>
-        <span class="pl-1 font-weight-light  white--text text--darken-3"
-          >CRM</span
-        >
+        <v-img
+          src="/images/logo/logo.jpg"
+          class="mx-2"
+          max-height="90%"
+          max-width="70"
+          contain
+        ></v-img>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon :ripple="false" v-if="$auth.user.admin" to="admin">
@@ -35,19 +38,37 @@
             <v-list-item-title>{{ $auth.user.name }}</v-list-item-title>
           </v-list-item-content>
         </template>
-        <v-list-item to="/profile">
+        <v-list-item
+          nuxt
+          :to="{ name: 'index-user-id', params: { id: $auth.user.id } }"
+        >
           <v-list-item-icon>
-            <v-icon>mdi-account</v-icon>
+            <v-icon color="secondary">mdi-account</v-icon>
           </v-list-item-icon>
           <v-list-item-title>Profile</v-list-item-title>
         </v-list-item>
       </v-list-group>
       <v-divider></v-divider>
+      <v-text-field
+        name="search"
+        label="search in menu"
+        type="text"
+        v-model="search"
+        class="mx-2"
+        clearable
+        @click:clear="clearSearch"
+        autocomplete="off"
+      ></v-text-field>
+      <v-divider></v-divider>
       <v-list shaped>
         <v-list-item-group color="primary">
-          <v-list-item v-for="(item, i) in items" :key="i" :to="item.link">
+          <v-list-item
+            v-for="(item, index) in filteredPosts"
+            :key="index"
+            :to="item.link"
+          >
             <v-list-item-icon>
-              <v-icon v-text="item.icon"></v-icon>
+              <v-icon v-text="item.icon" color="secondary"></v-icon>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title v-text="item.text"></v-list-item-title>
@@ -66,7 +87,8 @@ export default {
     return {
       drawer: false,
       profile: false,
-      item: 1,
+      destination: $nuxt.$route.path,
+      search: "",
       items: [
         { text: "Home", icon: "mdi-home", link: "/" },
         { text: "Contacts", icon: "mdi-clock", link: "/Contacts" },
@@ -81,6 +103,28 @@ export default {
   methods: {
     logout() {
       this.$auth.logout();
+    },
+    clearSearch() {
+      this.search = "";
+    },
+    routeChange() {
+      this.search = "";
+    }
+  },
+  computed: {
+    filteredPosts() {
+      if (this.search) {
+        return this.items.filter(
+          c => c.text.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+        );
+      } else {
+        return this.items;
+      }
+    }
+  },
+  watch: {
+    $route() {
+      this.routeChange();
     }
   }
 };

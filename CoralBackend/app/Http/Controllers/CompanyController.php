@@ -42,7 +42,7 @@ class CompanyController extends Controller
     {   
 
         $data = $request;
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
         
         $company = $this->company->store($data);
 
@@ -57,7 +57,7 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
-        $this->authorize('view', Company::class);
+        $this->authorize('view', \App\Models\Company::class);
  
         $data = $this->company->getById($id);
         return response()->json($data, 200);
@@ -72,10 +72,10 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        $this->authorize('update', Company::class);
+        $this->authorize('update', \App\Models\Company::class);
       
         $data = $request;
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
 
         $this->company->update($id,$data);
 
@@ -90,7 +90,7 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {   
-        $this->authorize('delete', Company::class);
+        $this->authorize('delete', \App\Models\Company::class);
 
         $this->company->delete($id);
 

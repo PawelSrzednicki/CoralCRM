@@ -1,22 +1,22 @@
 <template>
       <v-card>
-        <v-card-title primary-title dense flat>
-            Edit Contact
+        <v-card-title primary-title dense>
+            Edit Task
         </v-card-title>
         <v-card-text>
           <v-container>
-              <contactForm :contactId="this.$route.params.id"></contactForm>  
+              <Form :taskId="this.$route.params.id"></Form>  
           </v-container>             
         </v-card-text>
       </v-card>
 </template>
 
 <script>
-import contactForm from '~/components/contacts/contactForm.vue';
+import Form from '~/components/tasks/Form.vue';
 
 export default{
   components:{
-    contactForm
+    Form
   },
   data() {
     return {

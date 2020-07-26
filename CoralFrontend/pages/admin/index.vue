@@ -1,6 +1,5 @@
 <template>
   <div>
-    <p>{{ $auth.user.admin }}</p>
-    <h1 v-if="$auth.user.admin">Vue is awesome!</h1>
+    <h1 v-if="$auth.user.admin">Welcome to administration Dashboard {{ $auth.user.name }}</h1>
   </div>
 </template>

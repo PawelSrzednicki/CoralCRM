@@ -5,10 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\UserRepository;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
-     private $user;
+    private $user;
 
     function __construct(UserRepository $user) {		
 			$this->user = $user;		
@@ -20,9 +21,8 @@ class UsersController extends Controller
      */
     public function index()
     {    
-        $data = [
-            'data' => $this->user->all()
-        ];
+        $data =  $this->user->all();
+        
         return response()->json($data, 200);
     }
 

@@ -20,6 +20,7 @@ const _2cf68230 = () => interopDefault(import('..\\pages\\index\\leads\\index.vu
 const _145940de = () => interopDefault(import('..\\pages\\index\\tasks\\index.vue' /* webpackChunkName: "pages_index_tasks_index" */))
 const _0dc7cd50 = () => interopDefault(import('..\\pages\\index\\tickets\\index.vue' /* webpackChunkName: "pages_index_tickets_index" */))
 const _1e6de766 = () => interopDefault(import('..\\pages\\index\\calendar\\add.vue' /* webpackChunkName: "pages_index_calendar_add" */))
+const _4bcd8529 = () => interopDefault(import('..\\pages\\index\\calendar\\list.vue' /* webpackChunkName: "pages_index_calendar_list" */))
 const _a686e91a = () => interopDefault(import('..\\pages\\index\\companies\\add.vue' /* webpackChunkName: "pages_index_companies_add" */))
 const _410769f1 = () => interopDefault(import('..\\pages\\index\\contacts\\add.vue' /* webpackChunkName: "pages_index_contacts_add" */))
 const _66c996b7 = () => interopDefault(import('..\\pages\\index\\leads\\add.vue' /* webpackChunkName: "pages_index_leads_add" */))
@@ -123,6 +124,10 @@ export const routerOptions = {
       path: "calendar/add",
       component: _1e6de766,
       name: "index-calendar-add"
+    }, {
+      path: "calendar/list",
+      component: _4bcd8529,
+      name: "index-calendar-list"
     }, {
       path: "companies/add",
       component: _a686e91a,

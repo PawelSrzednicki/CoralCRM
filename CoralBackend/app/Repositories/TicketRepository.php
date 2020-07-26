@@ -31,8 +31,8 @@ class TicketRepository {
     public function store($data){
       
        $ticket=\App\Models\Ticket::create($data->except(['ticket_status','ticket_priority']));
-       $ticket->ticket_status()->sync([$data['ticket_status']]);
-       $ticket->ticket_type()->sync([$data['ticket_priority']]);
+       $ticket->ticket_status()->sync($data['ticket_status']);
+       $ticket->ticket_type()->sync($data['ticket_priority']);
 
        return $ticket;
     }
@@ -41,8 +41,8 @@ class TicketRepository {
          
          $ticket=\App\Models\Ticket::findOrFail($id);
          $ticket=\App\Models\Ticket::update($data->except(['ticket_status','ticket_priority']));
-         $ticket->ticket_status()->sync([$data['ticket_status']]);
-         $ticket->ticket_type()->sync([$data['ticket_priority']]); 
+         $ticket->ticket_status()->sync($data['ticket_status']);
+         $ticket->ticket_type()->sync($data['ticket_priority']); 
 
           return $ticket;
     }

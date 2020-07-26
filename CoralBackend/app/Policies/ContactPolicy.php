@@ -36,7 +36,7 @@ class ContactPolicy
      */
     public function view(User $user, Contact $contact)
     {
-        return $user->id === $contact->assignedTo? Response::allow()
+        return $user->id === $contact->owner_id? Response::allow()
                 : Response::deny('You do not own this post.');
     }
 
@@ -60,7 +60,7 @@ class ContactPolicy
      */
     public function update(User $user, Contact $contact)
     {
-        return $user->id === $contact->assignedTo? Response::allow()
+        return $user->id === $contact->owner_id? Response::allow()
                 : Response::deny('You do not own this post.');
     }
 
@@ -73,7 +73,7 @@ class ContactPolicy
      */
     public function delete(User $user, Contact $contact)
     {
-        return $user->id === $contact->assignedTo? Response::allow()
+        return $user->id === $contact->owner_id? Response::allow()
                 : Response::deny('You do not own this post.');
     }
 

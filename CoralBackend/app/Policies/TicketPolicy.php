@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Ticket;
+use App\Models\Ticket;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class TicketPolicy
@@ -12,7 +12,7 @@ class TicketPolicy
 
     public function before($user, $ability)
     {
-        if ($user->admin()) {
+        if ($user->admin) {
             return true;
         }
     }

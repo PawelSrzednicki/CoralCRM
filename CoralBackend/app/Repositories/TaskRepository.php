@@ -38,7 +38,7 @@ class TaskRepository {
     public function update($id,$data){
          
          $task=\App\Models\Task::findOrFail($id);
-         $task=\App\Models\Task::update([$data]);
+         $task->update([$data]);
        
           return $task;
     }

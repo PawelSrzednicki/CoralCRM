@@ -1,22 +1,22 @@
 <template>
       <v-card>
-        <v-card-title primary-title dense flat>
-            Add Contact
+        <v-card-title primary-title dense>
+            Add User
         </v-card-title>
         <v-card-text>
           <v-container>
-              <contactForm></contactForm>  
+              <Form></Form>  
           </v-container>             
         </v-card-text>
       </v-card>
 </template>
 
 <script>
-import contactForm from '~/components/contacts/contactForm.vue';
+import Form from '~/components/users/Form.vue';
 
 export default{
   components:{
-    contactForm
+    Form
   }
 }
 </script>

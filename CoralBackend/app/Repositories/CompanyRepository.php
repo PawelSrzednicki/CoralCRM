@@ -16,7 +16,7 @@ class CompanyRepository {
 
     public function getAllByUser($user){
         
-        $company = \App\Models\Company::where('assignedTo','=', $user)->get();
+        $company = \App\Models\Company::where('owner_id','=', $user)->get();
         
         return $company;
     }

@@ -19,7 +19,7 @@ class CreateTicketsTable extends Migration
 			$table->string('name');
 			$table->text('description');
 			$table->dateTime('creationDate');
-			$table->text('assignedTo')->nullable();
+			$table->text('owner_id')->nullable();
 			$table->timestamps();
 		});
 	}

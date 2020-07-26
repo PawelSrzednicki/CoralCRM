@@ -13,54 +13,50 @@
       <v-col cols="6">
         <v-text-field
           label="Firstname"
-          class="required"
-          filled
           v-model="formData.firstname"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
         <v-text-field
           label="Surname"
-          filled
           v-model="formData.lastname"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
         <v-text-field
           label="Address"
-          class="required"
-          filled
           v-model="formData.address"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
         <v-text-field
           label="Phone"
-          class="required"
-          filled
           v-model="formData.phone"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
         <v-text-field
           label="Email"
-          class="required"
-          filled
           v-model="formData.email"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
         <v-text-field
-          label="City"
-          filled
+          label="City"  
           v-model="formData.city"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
         <v-text-field
           label="Zip-Code"
-          filled
           v-model="formData.zip"
+          readonly
         ></v-text-field>
       </v-col>
       <v-col cols="6">
@@ -69,8 +65,8 @@
         >
           <v-text-field
             label="Contact Status"
-            filled
             v-model="formData.contactstatus[0].value"
+            readonly
           ></v-text-field>
         </span>
       </v-col>
@@ -84,8 +80,8 @@
         >
           <v-text-field
             label="Contact Lead Status"
-            filled
             v-model="formData.contactleadstatus[0].value"
+            readonly
           ></v-text-field>
         </span>
       </v-col>
@@ -96,8 +92,8 @@
         >
           <v-text-field
             label="Lifecyclestage"
-            filled
             v-model="formData.lifecyclestage[0].value"
+            readonly
           ></v-text-field>
         </span>
       </v-col>
@@ -133,3 +129,8 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+  .theme--light.v-label {
+       color: #1E88E5;
+   }   
+</style>

@@ -18,7 +18,7 @@ class CreateTasksTable extends Migration
 			$table->bigIncrements('id');
 			$table->string('name');
 			$table->text('description');
-			$table->text('assignedTo')->nullable();
+			$table->text('owner_id')->nullable();
 			$table->timestamps();
 		});
 	}

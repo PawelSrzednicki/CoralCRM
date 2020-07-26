@@ -3,21 +3,19 @@
     <v-col cols="12">
       <v-card>
         <v-card-title primary-title class="primary--text">
-            Contacts
+            Calendar
             <v-spacer></v-spacer>
-              <v-fab-transition>
               <v-btn
                 color="pink"
                 dark
                 right
-                to="Contacts/add"
+                to="Calendar/add"
               >
               Add New
               </v-btn>
-            </v-fab-transition>
         </v-card-title>
         <v-card-text>
-            <list/>
+            <Calendar/>
         </v-card-text>
       </v-card>
     </v-col>
@@ -25,11 +23,11 @@
 </template>
 
 <script>
-import list from '~/components/contacts/list.vue';
+import Calendar from '~/components/calendar/Calendar.vue';
 
 export default{
   components:{
-    list
+    Calendar
   },
   data() {
     return {

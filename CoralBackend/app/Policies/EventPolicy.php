@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Event;
+use App\Models\Event;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -12,7 +12,7 @@ class EventPolicy
  
     public function before($user, $ability)
     {
-        if ($user->admin()) {
+        if ($user->admin) {
             return true;
         }
     }

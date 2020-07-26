@@ -1,41 +1,64 @@
 <template>
+ <v-card flat>
+    <v-card-title>
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Search"
+        single-line
+        hide-details
+        class="shrink mx-10"
+      ></v-text-field>
+      <v-spacer></v-spacer>
+      <v-btn
+                color="pink"         
+                right
+                text
+                to="Users/add"
+              >
+              Add New
+              </v-btn>
+    </v-card-title>
   <v-data-table
+  :search="search"
     :headers="headers"
     :items="items"
     class="elevation-0"
     pagination.sync="pagination"
     :item-key="items.id"
   >     
-          <template #item.firstname="{ item }">
-              <nuxt-link :to="{ name: 'index-contacts-id', params: { id: item.id }}">{{ item.firstname }}</nuxt-link>
+          <template #item.name="{ item }">
+              <nuxt-link :to="{ name: 'admin-users-id', params: { id: item.id }}">{{ item.name }}</nuxt-link>
           </template>
         <template v-slot:item.actions="{ item }">
-            <v-btn icon flat :to="{ name: 'index-contacts-edit-id', params: { id: item.id }}">
-              <v-icon> mdi-pencil</v-icon>
+            <v-btn icon flat :to="{ name: 'admin-users-edit-id', params: { id: item.id }}">
+              <v-icon color="secondary"> mdi-pencil</v-icon>
             </v-btn>
            <v-btn icon  @click="deleteItem(item)">
-              <v-icon> mdi-delete</v-icon>
+              <v-icon color="warning"> mdi-delete</v-icon>
             </v-btn>
       </template>
   </v-data-table>
+ </v-card>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      search:'',
       headers: [
         {
-          text: "Name",
-          value: "firstname"
+          text: "name",
+          value: "name"
         },
         {
-          text: "Surname",
+          text: "lastname",
           value: "lastname"
         },
           {
-          text: "Address",
-          value: "address"
+          text: "Adress",
+          value: "adress"
         },
           {
           text: "Email",
@@ -50,7 +73,7 @@ export default {
     };
   },
   created() {
-    this.$axios.get('contact').then(res => {
+    this.$axios.get('admin/users').then(res => {
       if (res.status === 200) {
        this.items = res.data
       }

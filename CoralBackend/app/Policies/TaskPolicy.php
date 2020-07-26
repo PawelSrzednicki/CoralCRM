@@ -3,7 +3,7 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Task;
+use App\Models\Task;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class TaskPolicy
@@ -12,7 +12,7 @@ class TaskPolicy
 
     public function before($user, $ability)
     {
-        if ($user->admin()) {
+        if ($user->admin) {
             return true;
         }
     }

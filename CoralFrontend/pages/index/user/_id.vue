@@ -1,19 +1,20 @@
 <template>
       <v-card>
         <v-card-text>
+            {{$nuxt.$route.name}}
           <v-container>
-              <showItem :contactId="this.$route.params.id"></showItem>  
+              <Profile :userId="this.$route.params.id"></Profile>  
           </v-container>             
         </v-card-text>
       </v-card>
 </template>
 
 <script>
-import showItem from '~/components/contacts/showItem.vue';
+import Profile from '~/components/users/Profile.vue';
 
 export default{
   components:{
-    showItem
+    Profile
   },
   data() {
     return {

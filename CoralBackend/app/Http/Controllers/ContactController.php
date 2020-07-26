@@ -39,7 +39,7 @@ class ContactController extends Controller
     public function store(StoreContact $request)
     {   
         $data = $request;
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
         
         $contact = $this->contact->store($data);
 
@@ -72,7 +72,7 @@ class ContactController extends Controller
         $this->authorize('update', \App\Models\Contact::class);
 
         $data = $request;
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
 
         $this->contact->update($id,$data);
 

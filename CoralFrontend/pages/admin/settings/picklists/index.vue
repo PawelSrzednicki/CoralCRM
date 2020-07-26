@@ -42,7 +42,7 @@ export default {
     };
   },
   created() {
-    this.$axios.get('api/admin/picklists').then(res => {
+    this.$axios.get('admin/picklists').then(res => {
       if (res.status === 200) {
        this.list = res.data
       }

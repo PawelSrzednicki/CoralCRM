@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Company;
+use App\Models\Company;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Auth\Access\Response;
@@ -13,7 +13,7 @@ class CompanyPolicy
     
     public function before($user, $ability)
     {
-        if ($user->admin()) {
+        if ($user->admin) {
             return true;
         }
     }

@@ -40,7 +40,7 @@ class LeadController extends Controller
     {   
  
         $data = $request;
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
         
         $lead = $this->lead->store($data);
 
@@ -55,7 +55,7 @@ class LeadController extends Controller
      */
     public function show($id)
     {
-        $this->authorize('view', Lead::class);
+        $this->authorize('view', App\Models\Lead::class);
 
         $data = $this->lead->getById($id);
 
@@ -71,10 +71,10 @@ class LeadController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        $this->authorize('update', Lead::class);
+        $this->authorize('update', App\Models\Lead::class);
 
          $data = $request;
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
 
         $this->lead->update($id,$data);
 
@@ -89,7 +89,7 @@ class LeadController extends Controller
      */
     public function destroy($id)
     {   
-        $this->authorize('delete', Lead::class);
+        $this->authorize('delete', App\Models\Lead::class);
 
         $this->lead->delete($id);
 

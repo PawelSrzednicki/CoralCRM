@@ -31,9 +31,9 @@ class LeadRepository {
     public function store($data){
       
        $lead=\App\Models\Lead::create($data->except(['lead_status','lead_type','sales_pipeline']));
-       $lead->lead_status()->sync([$data['lead_status']]);
-       $lead->lead_type()->sync([$data['lead_type']]);   
-       $lead->sales_pipeline()->sync([$data['sales_pipeline']]);   
+       $lead->lead_status()->sync($data['lead_status']);
+       $lead->lead_type()->sync($data['lead_type']);   
+       $lead->sales_pipeline()->sync($data['sales_pipeline']);   
 
        return $lead;
     }
@@ -41,10 +41,10 @@ class LeadRepository {
     public function update($id,$data){
          
          $lead=\App\Models\Lead::findOrFail($id);
-         $lead=\App\Models\Lead::update($data->except(['lead_status','lead_type','sales_pipeline']));
-         $lead->lead_status()->sync([$data['lead_status']]);
-         $lead->lead_type()->sync([$data['lead_type']]);   
-         $lead->sales_pipeline()->sync([$data['sales_pipeline']]);     
+         $lead->update($data->except(['lead_status','lead_type','sales_pipeline']));
+         $lead->lead_status()->sync($data['lead_status']);
+         $lead->lead_type()->sync($data['lead_type']);   
+         $lead->sales_pipeline()->sync($data['sales_pipeline']);     
 
           return $lead;
     }

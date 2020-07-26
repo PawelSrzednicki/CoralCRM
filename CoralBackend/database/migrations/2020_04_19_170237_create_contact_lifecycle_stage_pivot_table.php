@@ -12,11 +12,11 @@ class CreateContactLifecycleStagePivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact_lifecycle_stage', function (Blueprint $table) {
+        Schema::create('contact_lifecyclestage', function (Blueprint $table) {
             $table->bigInteger('contact_id')->unsigned()->index();
             $table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade');
-            $table->bigInteger('lifecycle_stage_id')->unsigned()->index()->nullable();
-            $table->foreign('lifecycle_stage_id')->references('id')->on('pltbl_lifecycle_stages')->onDelete('cascade');
+            $table->bigInteger('lifecyclestage_id')->unsigned()->index()->nullable();
+            $table->foreign('lifecyclestage_id')->references('id')->on('pltbl_lifecyclestages')->onDelete('cascade');
         });
     }
 

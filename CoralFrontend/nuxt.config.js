@@ -52,7 +52,7 @@ export default {
    */
   axios: {
     baseURL: "http://coralcrm.test:8080/api",
-    credentials: true
+    credentials: true,
   },
   auth: {
     redirect: {

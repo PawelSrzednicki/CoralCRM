@@ -1,20 +1,30 @@
 <template>
   <v-card class=" transparent" outlined>
+    <v-card-title primary-title class="justify-center">
+      {{PicklistData}}
+    </v-card-title>
     <v-data-table
       :headers="headers"
       :items="items"
-      sort-by="calories"
+      :search="search"
       >
       <template v-slot:top>
         <v-toolbar flat>
-          <v-toolbar-title>{{ PicklistData }}</v-toolbar-title>
           <v-spacer></v-spacer>
+            <v-text-field
+              v-model="search"
+              append-icon="mdi-magnify"
+              label="Search"
+              single-line
+              hide-details
+              class="shrink mx-10"
+           ></v-text-field>
           <v-dialog v-model="dialog" max-width="500px">
             <template v-slot:activator="{ on, attrs }">
               <v-btn color="primary" dark class="mb-2" v-bind="attrs" v-on="on"
                 >New Item</v-btn
               >
-            </template>
+            </template>         
             <v-card>
               <v-card-title>
                 <span class="headline">{{ formTitle }}</span>
@@ -22,13 +32,13 @@
               <v-card-text>
                 <v-container>
                   <v-row>
-                    <v-col cols="12" sm="6" md="4">
+                    <v-col cols="12">
                       <v-text-field
                         v-model="editedItem.value"
                         label="Value"
                       ></v-text-field>
                     </v-col>
-                    <v-col cols="12" sm="6" md="4">
+                    <v-col cols="12">
                       <v-text-field
                         v-model="editedItem.description"
                         label="Description"
@@ -48,10 +58,10 @@
         </v-toolbar>
       </template>
       <template v-slot:item.actions="{ item }">
-        <v-icon small class="mr-2" @click="editItem(item)">
+        <v-icon small class="mr-2" @click="editItem(item)" color="secondary">
           mdi-pencil
         </v-icon>
-        <v-icon small @click="deleteItem(item)">
+        <v-icon small @click="deleteItem(item)" color="warning">
           mdi-delete
         </v-icon>
       </template>
@@ -70,6 +80,7 @@ export default {
   },
   data() {
     return {
+      search: '',
       headers: [
         {
           text: "Name",
@@ -94,7 +105,7 @@ export default {
     loadItems() {
       this.items = [];
       this.$axios
-        .get(`api/admin/picklist/${this.PicklistData}`)
+        .get(`admin/picklist/${this.PicklistData}`)
         .then(response => {
           this.items = response.data;
         })
@@ -114,7 +125,7 @@ export default {
           value: this.editedItem.value,
           description: this.editedItem.description,
         }
-        this.$axios.post(`api/admin/picklist/${this.PicklistData}/add`,payload).then(res => {
+        this.$axios.post(`admin/picklist/${this.PicklistData}/add`,payload).then(res => {
           if (res.status === 200) {
               console.log('succes');
                this.loadItems();
@@ -137,7 +148,7 @@ export default {
         value:   this.editedItem.value,
         description:   this.editedItem.description,
       }
-      this.$axios.patch(`api/admin/picklist/${this.PicklistData}/${this.editedItem.id}/update`,payload).then(res => {
+      this.$axios.patch(`admin/picklist/${this.PicklistData}/${this.editedItem.id}/update`,payload).then(res => {
           if (res.status === 200) {
                console.log('succes');
                 this.loadItems();
@@ -148,7 +159,7 @@ export default {
     deleteItem(item) {
       const index = this.items.indexOf(item);
       confirm("Are you sure you want to delete this item?");
-      this.$axios.delete(`api/admin/picklist/${this.PicklistData}/${item.id}/delete`, item.id).then(res => {
+      this.$axios.delete(`admin/picklist/${this.PicklistData}/${item.id}/delete`, item.id).then(res => {
           if (res.status === 200) {
             this.loadItems();
           }

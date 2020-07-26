@@ -20,7 +20,7 @@
       </v-btn>
     </v-app-bar>
     <!-- mobile drawer starts-->
-    <v-navigation-drawer v-model="drawer" app>
+    <v-navigation-drawer v-model="drawer" app clipped>
       <v-toolbar flat>
         <v-toolbar-title class="mr-12 align-center">
           <span class="title">Coral Crm</span>
@@ -30,7 +30,7 @@
         <v-list-item-group color="primary">
           <v-list-item v-for="(item, i) in items" :key="i" :to="item.link">
             <v-list-item-icon>
-              <v-icon v-text="item.icon"></v-icon>
+              <v-icon v-text="item.icon" color="secondary"></v-icon>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title v-text="item.text"></v-list-item-title>
@@ -52,6 +52,11 @@ export default {
       item: 1,
       items: [
         { text: "Go Back", icon: "mdi-home", link: "/" },
+        {
+          text: "Users",
+          icon: "mdi-account",
+          link: "/admin/users"
+        },
         {
           text: "Picklists Settings",
           icon: "mdi-clock",

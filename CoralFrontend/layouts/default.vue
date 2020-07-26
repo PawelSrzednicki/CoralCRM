@@ -6,6 +6,7 @@
         <nuxt />
       </v-container>
     </v-content>
+    <appFooter/>
   </v-app>
 </template>
 

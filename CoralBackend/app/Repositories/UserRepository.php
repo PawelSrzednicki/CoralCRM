@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Repositories;
-use Illuminate\Support\Facades\Hash;
 
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
 class UserRepository {
@@ -28,7 +28,7 @@ class UserRepository {
     public function store($data){
         
         $password = Hash::make($data['password']);
-        $user = \App\Models\User::create([$data->except(['password',]),'password' => $password]);
+        $user = \App\Models\User::create([$data->except(['password']),'password' => $password]);
 
         return $user;
     }
@@ -37,7 +37,7 @@ class UserRepository {
         $password = Hash::make($data['password']);
         
         $user = \App\Models\User::findOrFail($id);
-        $user = \App\Models\User::update([$data->except(['password',]),'password' => $password]);
+        $user->update([$data->except(['password']),'password' => $password]);
 
         return $user;
     }
@@ -49,7 +49,4 @@ class UserRepository {
         return $user;
     }
 
-     public function create(){
- 
-     }
 }

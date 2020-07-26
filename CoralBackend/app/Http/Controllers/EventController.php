@@ -40,7 +40,7 @@ class EventController extends Controller
     {   
  
          $data = $request;
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
         
         $event = $this->event->store($data);
 
@@ -55,7 +55,7 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        $this->authorize('view', Event::class);
+        $this->authorize('view', \App\Models\Event::class);
         
         $data = $this->event->getById($id);
 
@@ -71,10 +71,10 @@ class EventController extends Controller
      */
     public function update(Request $request, $id)
     {  
-        $this->authorize('update', Event::class);
+        $this->authorize('update', \App\Models\Event::class);
 
         $data = $request;
-        $data['assignedTo'] = Auth::id();
+        $data['owner_id'] = Auth::id();
 
         $this->event->update($id,$data);
 
@@ -89,9 +89,9 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        $this->authorize('delete', Event::class);
+        $this->authorize('delete', \App\Models\Event::class);
 
-        $this->event->delete($id);
+        $data = $this->event->delete($id);
 
         return response()->json($data, 200);
     }

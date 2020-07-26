@@ -2,18 +2,8 @@
   <v-row>
     <v-col cols="12">
       <v-card>
-        <v-card-title primary-title class="primary--text">
-            Contacts
-            <v-spacer></v-spacer>
-              <v-btn
-                color="pink"
-                dark
-                right
-                text
-                to="Contacts/add"
-              >
-              Add New
-              </v-btn>
+        <v-card-title primary-title class="primary--text justify-center">
+            Contacts       
         </v-card-title>
         <v-card-text>
             <list/>

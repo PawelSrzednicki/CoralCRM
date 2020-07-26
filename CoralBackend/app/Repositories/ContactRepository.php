@@ -31,10 +31,10 @@ class ContactRepository {
     public function store($data){
       
        $contact=\App\Models\Contact::create($data->except(['contact_lead_status','contact_status','lifecyclestage','companies']));
-       $contact->contact_status()->sync([$data['contact_status']]);
-       $contact->contact_lead_status()->sync([$data['contact_lead_status']]);   
-       $contact->lifecyclestage()->sync([$data['lifecyclestage']]);  
-       $contact->companies()->sync([$data['companies']]);  
+       $contact->contact_status()->sync($data['contact_status']);
+       $contact->contact_lead_status()->sync($data['contact_lead_status']);   
+       $contact->lifecyclestage()->sync($data['lifecyclestage']);  
+       $contact->companies()->sync($data['companies']);  
 
        return $contact;
     }
@@ -43,10 +43,10 @@ class ContactRepository {
          
          $contact=\App\Models\Contact::findOrFail($id);
          $contact->update($data->except(['contact_lead_status','contact_status','lifecyclestage','companies']));
-         $contact->contact_status()->sync([$data['contact_status']]);
-         $contact->contact_lead_status()->sync([$data['contact_lead_status']]);   
-         $contact->lifecyclestage()->sync([$data['lifecyclestage']]);  
-         $contact->companies()->sync([$data['companies']]);   
+         $contact->contact_status()->sync($data['contact_status']);
+         $contact->contact_lead_status()->sync($data['contact_lead_status']);   
+         $contact->lifecyclestage()->sync($data['lifecyclestage']);  
+         $contact->companies()->sync($data['companies']);   
 
          return $contact;
     }

@@ -17,7 +17,7 @@ class CreatePltblLeadStatusesTable extends Migration
 		{
 			$table->bigIncrements('id');
             $table->string('value');
-            $table->string('description');
+            $table->string('description')->nullable();
 			$table->timestamps();
 		});
 	}
